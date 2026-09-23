@@ -18,7 +18,7 @@
 | Security checklist | `docs/SECURITY_CHECKLIST.md` |
 | Compliance & docs tracker | `docs/COMPLIANCE_AND_DOCUMENTATION.md` |
 | Coding tool | Claude Code |
-| Repository | https://github.com/ZahabiyaRokadia/investment-tool_ZR (private) |
+| Repository | https://github.com/ZahabiyaRokadia/investment-tool_ZR (**public** — owner risk acceptance, see §7) |
 | Current phase | **Pre-Phase 0: planning & documentation** |
 
 ## 2. Goals (what "success" means)
@@ -115,8 +115,13 @@ Research gates (all must pass before production portfolio recommendations): 0 of
   - Created root `.gitignore`, created GitHub repo `ZahabiyaRokadia/investment-tool_ZR`, pushed initial governance docs, then converted repo to **public** at owner's explicit request (risk acceptance — see Decisions log).
 - **Tests run:** None (no application code yet).
 - **Checked by:** Self-check only (no reviewer subagent needed — no code changes, only tooling/infra).
-- **Blockers / risks:** `main` branch has no protection ruleset yet (direct push is possible). Repo is public, contrary to `SECURITY_CHECKLIST.md` §6. Docker Desktop needs the owner to finish first-run setup (may require enabling WSL2 + a restart, needs admin elevation the agent doesn't have). Open decisions D1–D12 still unresolved.
-- **Note to next session opener:** Confirm whether public visibility is still wanted before any real financial data is added. Consider setting up branch protection on `main` next. Then walk the owner through D1–D12 before starting actual Phase 0 feature work (repo scaffolding, DB, auth skeleton).
+- **Blockers / risks:** `main` branch has no protection ruleset yet (direct push is possible). Repo is public, contrary to `SECURITY_CHECKLIST.md` §6. Docker Desktop needs the owner to finish first-run setup (may require enabling WSL2 + a restart, needs admin elevation the agent doesn't have). Open decisions D1–D12 still unresolved. MFA/recovery codes in §6 accounts register still all unchecked — not verified this session.
+- **Note to next session opener — next steps in priority order:**
+  1. Ask the owner: is public repo visibility still wanted, now that Docker/tooling work is done and real financial data entry is getting closer? If not, `gh repo edit ZahabiyaRokadia/investment-tool_ZR --visibility private`.
+  2. Set up branch protection on `main` (ruleset: no direct push, PR required, block force-push/deletion) — `SECURITY_CHECKLIST.md` §6, currently unticked.
+  3. Confirm Docker Desktop's first-run setup is complete on the owner's machine (WSL2 enabled, license accepted) before relying on it for local Postgres.
+  4. Walk the owner through open decisions D1–D12 in `HANDOFF.md` §5 — nothing in Phase 0 proper (repo scaffolding, DB, auth skeleton, CI) should start until at least D1 (cloud/region), D2 (auth provider) and D8 (security standard) are confirmed, since they shape the scaffold.
+  5. Only after that: begin actual Phase 0 build — create `backend/` (FastAPI) and `frontend/` (Next.js) scaffolds, initialize CI (GitHub Actions) wired to the already-installed lint/type/security tools, set up `.env.example` + secrets handling, and get `pre-commit` hooks installed (`pre-commit install`) in this repo.
 
 ### 2026-09-23 — Session 1 (Claude, Cowork)
 - **Done:** Reviewed BRD & PRD. Built a project dashboard artifact. Wrote gap review. Created `HANDOFF.md`, `CLAUDE.md`, `docs/SECURITY_CHECKLIST.md`, `docs/COMPLIANCE_AND_DOCUMENTATION.md`.
