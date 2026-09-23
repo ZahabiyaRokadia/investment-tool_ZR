@@ -1,0 +1,114 @@
+# ==========================================================================
+# Secrets & credentials — NEVER commit these, no exceptions.
+# See docs/SECURITY_CHECKLIST.md §3 "Secrets management".
+# ==========================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*_rsa
+*_rsa.pub
+*_dsa
+*_ed25519
+id_rsa*
+id_ed25519*
+*.credentials.json
+*credentials*.json
+secrets/
+secret/
+.secrets/
+*.secret
+*.token
+.npmrc
+.pypirc
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+kubeconfig
+*.kubeconfig
+
+# ==========================================================================
+# Python / FastAPI backend
+# ==========================================================================
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+*.egg-info/
+.coverage
+htmlcov/
+.tox/
+
+# ==========================================================================
+# Node.js / Next.js frontend
+# ==========================================================================
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+.pnpm-store/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================================================================
+# Terraform / OpenTofu (infra as code, from Phase 9 or first cloud resource)
+# ==========================================================================
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# ==========================================================================
+# Docker / local dev
+# ==========================================================================
+docker-compose.override.yml
+.docker/
+
+# ==========================================================================
+# Databases & local data (never commit real personal financial data)
+# ==========================================================================
+*.sqlite3
+*.db
+/pgdata/
+*.dump
+*.sql.gz
+
+# ==========================================================================
+# Logs
+# ==========================================================================
+*.log
+logs/
+
+# ==========================================================================
+# OS & editor cruft
+# ==========================================================================
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+
+# ==========================================================================
+# CI / build artifacts
+# ==========================================================================
+*.sbom.json
+sbom/
+.cache/
