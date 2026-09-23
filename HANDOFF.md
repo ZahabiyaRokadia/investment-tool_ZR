@@ -107,6 +107,17 @@ Research gates (all must pass before production portfolio recommendations): 0 of
 
 ## 8. Session log (newest first)
 
+### 2026-09-23 — Session 2 (Claude Code)
+- **Phase / task:** Pre-Phase 0 setup — local tooling install (CLAUDE.md §9 P0 CLI list) + repo bootstrap.
+- **Done:**
+  - Installed & verified: `git` 2.55.0, `gh` 2.101.0 (authenticated as ZahabiyaRokadia), `uv` 0.12.18 + Python 3.13.15, Node.js LTS 24.19.0, `pnpm` 12.5.1 (standalone via winget — `corepack enable` failed with EPERM writing to `C:\Program Files\nodejs\`, not elevated), Docker Desktop 4.91.0 (installed but not yet run — first launch will need the owner to complete WSL2/license setup manually), `pre-commit` 4.6.2, `ruff` 0.16.8, `mypy` 2.3.1, `pip-audit` 2.10.1, `semgrep` 1.177.0 (all via `uv tool install`), `gitleaks` 8.30.1, `osv-scanner` 2.4.0, `trivy` 0.74.0, `syft` 1.51.0 (all via winget).
+  - Not installed yet (intentionally): cloud CLI (aws/az) and terraform/tofu — gated on open decision D1 (cloud provider not yet chosen); OWASP ZAP — P9, runs against staging later. `pytest`, `hypothesis`, `eslint`, `prettier`, `tsc`, `vitest`, `playwright` are per-project dependencies, not global tools — add when backend/frontend projects are scaffolded.
+  - Created root `.gitignore`, created GitHub repo `ZahabiyaRokadia/investment-tool_ZR`, pushed initial governance docs, then converted repo to **public** at owner's explicit request (risk acceptance — see Decisions log).
+- **Tests run:** None (no application code yet).
+- **Checked by:** Self-check only (no reviewer subagent needed — no code changes, only tooling/infra).
+- **Blockers / risks:** `main` branch has no protection ruleset yet (direct push is possible). Repo is public, contrary to `SECURITY_CHECKLIST.md` §6. Docker Desktop needs the owner to finish first-run setup (may require enabling WSL2 + a restart, needs admin elevation the agent doesn't have). Open decisions D1–D12 still unresolved.
+- **Note to next session opener:** Confirm whether public visibility is still wanted before any real financial data is added. Consider setting up branch protection on `main` next. Then walk the owner through D1–D12 before starting actual Phase 0 feature work (repo scaffolding, DB, auth skeleton).
+
 ### 2026-09-23 — Session 1 (Claude, Cowork)
 - **Done:** Reviewed BRD & PRD. Built a project dashboard artifact. Wrote gap review. Created `HANDOFF.md`, `CLAUDE.md`, `docs/SECURITY_CHECKLIST.md`, `docs/COMPLIANCE_AND_DOCUMENTATION.md`.
 - **Tests run:** None (no code yet).
