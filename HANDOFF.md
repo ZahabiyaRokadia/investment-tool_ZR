@@ -18,7 +18,7 @@
 | Security checklist | `docs/SECURITY_CHECKLIST.md` |
 | Compliance & docs tracker | `docs/COMPLIANCE_AND_DOCUMENTATION.md` |
 | Coding tool | Claude Code |
-| Repository | _Not created yet_ (Phase 0) — private GitHub repo |
+| Repository | https://github.com/ZahabiyaRokadia/investment-tool_ZR (private) |
 | Current phase | **Pre-Phase 0: planning & documentation** |
 
 ## 2. Goals (what "success" means)
@@ -100,6 +100,8 @@ Research gates (all must pass before production portfolio recommendations): 0 of
 | 2026-09-23 | Use Markdown docs in the project folder; rulebook lives in `CLAUDE.md` | Claude Code loads `CLAUDE.md` automatically every session |
 | 2026-09-23 | App is for the owner only | Keeps privacy and licensing obligations lighter; revisit if that changes |
 | 2026-09-23 | Created root `.gitignore` (secrets + build/dev artifacts only) | Enforces `SECURITY_CHECKLIST.md` §3 before first commit; BRD/PRD/CLAUDE.md/HANDOFF.md/docs/ stay tracked in git per `COMPLIANCE_AND_DOCUMENTATION.md` Part B1 |
+| 2026-09-23 | Created private GitHub repo `ZahabiyaRokadia/investment-tool_ZR`; pushed initial governance docs to `main` | Repo name can't contain spaces ("investment tool_ZR" → `investment-tool_ZR"); `main` is not yet protected — no ruleset/PR requirement set up yet |
+| 2026-09-23 | **Risk acceptance:** converted repo to **public**, overriding `SECURITY_CHECKLIST.md` §6 and PRD §8 "Private initially" | Owner's explicit instruction, given after being warned this conflicts with the documented requirement and that content pushed while public can be cached/cloned even if reverted. **Action needed before any real personal financial data or evidence documents are added: re-confirm this is still wanted, or flip back to private (`gh repo edit ... --visibility private`).** `main` remains unprotected — direct pushes possible. |
 
 ---
 
